@@ -1,0 +1,188 @@
+\documentclass{beamer}
+
+\usepackage{beamerthemesplit}
+
+\title{All the cool kids are using ncurses}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+% Slide 
+\section{Introduction}
+\subsection{Prerequisites}
+\frame 
+{
+    \frametitle{Prerequisites}
+    \textbf{C or C++} 
+}
+
+% Slide 
+\subsection{Overview}
+\frame
+{
+    \frametitle{Overview of topics}
+
+    \begin{itemize}
+        \item A bit of History
+        \item Who uses it today, and why?
+        \item How to use it
+    \end{itemize}
+}
+
+% Slide 
+\subsection{A bit of history}
+\frame
+{
+    \frametitle{Termcap, Terminfo}
+
+    \begin{itemize}
+        \item What is a terminal?
+        \item Curses/Termcap
+        \item PCurses/Terminfo/vi
+        \item NCurses, the best of all possible worlds
+    \end{itemize}
+}
+
+% Slide
+\subsection{Who uses NCurses today, and why?}
+\frame
+{
+    \frametitle{NCurses is @\#\%!\$ awesome!}
+
+    \begin{itemize}
+        \item Use programs over ssh
+        \item Why are you using system("clear")?
+        \item gui-like controls on the command line
+        \item irssi, screen, vim, cmus, vim, weechat, vim
+    \end{itemize}
+}
+
+% Slide
+\section{How we use it}
+\subsection{Like this...}
+\frame
+{
+    \frametitle{Buffers}
+
+    \begin{itemize}
+        \item Initialize the screen
+        \item Move to a location 
+        \item Print or clear
+        \item Refresh
+        \item Clean up the screen, exit
+    \end{itemize}
+}
+
+% Slide
+\subsection{Initialization}
+\frame
+{
+    \frametitle{Initialization}
+
+    \begin{itemize}
+        \item initscr() and stdscr
+        \item keypad()
+        \item getmaxyx()
+        \item curs\_set(0)
+    \end{itemize}
+}
+
+% Slide
+\subsection{Moving Around}
+\frame
+{
+    \frametitle{Moving Around}
+
+    \begin{itemize}
+        \item move()
+        \item addch() vs mvaddch() vs wmvaddch()
+    \end{itemize}
+}
+
+% Slide
+\subsection{Printing, Clearing, Refreshing}
+\frame
+{
+    \frametitle{Moving Around}
+
+    \begin{itemize}
+        \item mvaddch() 
+        \item mvaddstr()
+        \item mvprintw()
+        \item clear()
+        \item cleartoeol()
+        \item cleartobot()
+        \item refresh()
+    \end{itemize}
+}
+
+% Slide
+\subsection{Exit}
+\frame
+{
+    \frametitle{Time to exit}
+
+    \begin{itemize}
+        \item refresh before exit(0)
+        \item endwin() before exit(0)
+    \end{itemize}
+}
+
+% Slide
+\subsection{Common Gotchas}
+\frame
+{
+    \frametitle{Common Gotchas}
+
+    \begin{itemize}
+        \item y x reversal
+        \item ESCDELAY and notimeout
+        \item Don't forget to refresh()!
+        \item Don't forget to curs\_set(1)!
+        \item No, really. Don't forget to endwin()
+    \end{itemize}
+}
+
+% Slide
+\section{Other Language Bindings}
+\frame
+{
+    \frametitle{Tabs}
+
+
+    \begin{itemize}
+        \small
+        \item Ada95 binding
+        \item Java binding (CHARVA)
+        \item Common Lisp binding
+        \item Eiffel binding
+        \item JavaScript binding
+        \item Kylix binding (LinCRT) 
+        \item OCaml binding
+        \item Perl binding
+        \item PHP binding
+        \item Python binding
+        \item Ruby binding
+        \item Haskell binding
+        \item C\# binding
+        \item Tcl/Tk Extensions 
+        \item Go binding
+    \end{itemize}
+}
+
+% Slide 
+\section{Outro}
+\frame
+{
+    \frametitle{Additional Resources}
+
+    \begin{itemize}
+        \item The Programmer's Guide to NCurses
+        \item Programming with curses (O'Reilly)
+        \item http://www.gnu.org/software/ncurses/ncurses.html
+    \end{itemize}
+}
+\end{document}
+

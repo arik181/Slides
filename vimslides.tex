@@ -1,0 +1,215 @@
+\documentclass{beamer}
+
+\usepackage{beamerthemesplit}
+
+\title{Intermediate Vim}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+% Slide 
+\section{Introduction}
+\subsection{Prerequisites}
+\frame 
+{
+    \frametitle{Prerequisites}
+    \textbf{Saving -} :wq\\
+    \textbf{Editing -} :e\\
+    \textbf{Moving Around -} hjkl, wb, C-u, C-d, zz etc... \\
+    \textbf{Regular Expressions -} s///g, filenames
+}
+
+% Slide 
+\subsection{Overview of topics}
+\frame
+{
+    \frametitle{Overview of topics}
+
+    \begin{enumerate}
+        \item Set and Map
+        \item Marks and Registers
+        \item Macros
+        \item Laying out a Work Session
+        \begin{itemize}
+            \item Buffers
+            \item Windows
+            \item Tabs
+        \end{itemize}
+        \item Programming
+        \begin{itemize}
+            \item Compilation (Make)
+            \item Runtime (GDB)
+        \end{itemize}
+
+    \end{enumerate}
+}
+
+% Slide 
+\section{Essentials}
+\subsection{Set}
+\frame
+{
+    \frametitle{Set Sets Variables}
+
+    \begin{itemize}
+        \item Variables are used by the editor
+        \item Variables are used in Vimscript
+        \item Keycodes are contained in variables
+    \end{itemize}
+}
+\subsection{Map}
+\frame
+{
+    \frametitle{Map binds keys}
+
+    \begin{itemize}
+        \item WYTIWYG
+        \item Remember the $<$CR$>$
+    \end{itemize}
+}
+\subsection{Marks}
+\frame
+{
+    \frametitle{Marks get you around quickly}
+
+    \begin{itemize}
+        \item First mark your target with m
+        \item Get there quickly with $`$
+        \item :marks
+    \end{itemize}
+}
+\subsection{Registers}
+\frame
+{
+    \frametitle{Registers are clipboards}
+
+    \begin{itemize}
+        \item yank it into a named register
+        \item put it with ``
+        \item edit it with ``
+        \item put it again
+    \end{itemize}
+}
+
+% Slide
+\subsection{Macros}
+\frame
+{
+    \frametitle{Surprise! Macros are just registers}
+
+    \begin{itemize}
+        \item Recording Macros
+        \item Playing Macros Back (Thanks Chad!)
+        \item Editing Macros: The `` registers
+    \end{itemize}
+}
+
+% Slide
+\section{Laying out a Work Session}
+\frame
+{
+    \frametitle{Different views on the same document set}
+
+    \begin{itemize}
+        \item Buffers
+        \item Windows
+        \item Tabs
+    \end{itemize}
+}
+
+% Slide
+\subsection{Buffers}
+\frame
+{
+    \frametitle{Buffers}
+
+    \begin{itemize}
+        \item Buffers are the files you have open
+        \item :buffers
+        \item :b close
+        \item :bufdo
+    \end{itemize}
+}
+
+% Slide
+\subsection{Windows}
+\frame
+{
+    \frametitle{Windows}
+
+    \begin{itemize}
+        \item Windows offer a view
+        \item :sp and :vs
+        \item :b autocompletion
+        \item :windo
+    \end{itemize}
+}
+
+% Slide
+\subsection{Tabs}
+\frame
+{
+    \frametitle{Tabs}
+
+    \begin{itemize}
+        \item An additional view layer
+        \item :tabnew
+        \item Remap to standards
+        \item :tabdo
+    \end{itemize}
+}
+
+% Slide 
+\section{Programming}
+\frame
+{
+    \frametitle{Never leave vim}
+
+    \begin{itemize}
+        \item Compilation and Runtime Debugging
+        \item Make is well integrated
+        \item GDB, not so much
+    \end{itemize}
+}
+
+% Slide 
+\subsection{Compilation (Make)}
+\frame
+{
+    \frametitle{Compilation (Make)}
+
+    \begin{itemize}
+        \item :make
+        \item :cwin and the quickfix window (thanks Finch!)
+        \item :ccl
+    \end{itemize}
+}
+
+% Slide 
+\subsection{Runtime (GDB)}
+\frame
+{
+    \frametitle{Runtime (GDB)}
+
+    \begin{itemize}
+        \item gdbvim
+        \item cgdb
+        \item clewn/vimgdb/pyclewn
+    \end{itemize}
+}
+
+% Slide 
+\section{Outro}
+\frame
+{
+    \frametitle{Outro}
+
+    \begin{itemize}
+        \item vim++
+        \item http://vim.wikia.com/
+    \end{itemize}
+}
+\end{document}
+
