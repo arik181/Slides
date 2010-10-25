@@ -1,0 +1,135 @@
+\documentclass{beamer}
+
+\usepackage{beamerthemesplit}
+
+\title{GDB/Make/Valgrind}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+% Slide 
+\section{Introduction}
+\subsection{Prerequisites}
+\frame 
+{
+    \frametitle{Prerequisites}
+    \textbf{Some C or C++}\\
+}
+
+% Slide 
+\subsection{Overview of Topics}
+\frame
+{
+    \frametitle{Overview of Topics}
+
+    \begin{itemize}
+        \item \textbf{Make} - Build Tool
+        \item \textbf{GDB} - Debugging Tool
+        \item \textbf{Valgrind} - Profiling Tool
+    \end{itemize}
+}
+
+% Slide 
+\section{Make}
+\subsection{Why use it?}
+\frame
+{
+    \frametitle{Why use it?}
+
+    \begin{itemize}
+        \item Automate common tasks
+        \item Avoid mistakes
+        \item Save Frustration
+        \item Impress your friends
+        \item Integrated into vim/emacs
+    \end{itemize}
+}
+
+\subsection{Syntax of a Makefile}
+\frame
+{
+    \frametitle{Syntax of a Makefile}
+
+    \begin{itemize}
+        \item Rules
+        \item Targets
+        \item Prerequisites
+        \item Recipes
+    \end{itemize}
+}
+
+% Slide
+\subsection{Invocation}
+\frame
+{
+    \frametitle{Invocation}
+
+    \begin{itemize}
+        \item \textbf{Naming the file} - makefile, Makefile
+        \item \textbf{Command line} - make
+        \item \textbf{with target} - make $<$targetname$>$
+    \end{itemize}
+}
+
+% Slide
+\section{GDB}
+\subsection{Why use it?}
+\frame
+{
+    \frametitle{Why use it?}
+
+    \begin{itemize}
+        \item $\%\$\#$$@$! print statements
+        \item The quiet art of debugging 
+        \item A logical approach
+        \item Information is never a waste
+    \end{itemize}
+}
+
+% Slide 
+\subsection{GDB Essentials}
+\frame
+{
+    \frametitle{GDB Essentials}
+
+    \begin{itemize}
+        \item where/bt
+        \item frame
+        \item list 1,10
+        \item step, next, continue
+        \item break
+        \item run
+        \item help 
+        \item info
+        \item print
+    \end{itemize}
+}
+
+% Slide 
+\section {Valgrind}
+\subsection{Why profile?}
+\frame
+{
+    \frametitle{Why profile?}
+
+    \begin{itemize}
+        \item Firefox fail.
+        \item What is a memory leak?
+        \item Running Valgrind
+    \end{itemize}
+}
+
+% Slide 
+\section{Outro}
+\frame
+{
+    \frametitle{Outro}
+
+    \begin{itemize}
+        \item Use these tools.
+    \end{itemize}
+}
+\end{document}
+

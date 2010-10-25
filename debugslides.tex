@@ -1,0 +1,283 @@
+\documentclass{beamer}
+
+\usepackage{beamerthemesplit}
+
+\title{Basic Debugging}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+% Slide 
+\section{Introduction}
+\subsection{Prerequisites}
+\frame 
+{
+    \frametitle{Prerequisites}
+    \textbf{Languages -} C or C++\\
+    \textbf{Make} \\
+    \textbf{Editors -} Vim, Emacs or at least Nano/Pico \\
+}
+
+% Slide 
+\subsection{Overview of topics}
+\frame
+{
+    \frametitle{Overview of topics}
+
+    \begin{enumerate}
+        \item When is a bug not a bug?
+        \item The three types of bugs
+            \begin{itemize}
+                \item Syntax Errors
+                \item Runtime Errors
+                \item Semantic Errors
+            \end{itemize}
+        \item Three general approaches
+            \begin{itemize}
+                \item Tracing
+                \item Preemptive Testing
+                \item Interactive Debugging
+            \end{itemize}
+        \item Tips and Tricks
+            \begin{itemize}
+                \item Warnings
+                \item Getting to know your debugger
+                \item Never leave your editor
+                \item Check what you type
+            \end{itemize}
+        \item Checklist
+
+    \end{enumerate}
+}
+
+% Slide 
+\section{Q: When is a bug not a bug?}
+\subsection{A: When it's your fault.}
+\frame
+{
+    \frametitle{When it's your fault.}
+
+    \begin{itemize}
+        \item Software faults
+        \item Errors \textbf{cause} faults
+        \item It pays to be pedantic
+        \item Probability of hardware failure: Minimal
+    \end{itemize}
+}
+\section{The three types of bugs}
+\subsection{Syntax Errors}
+\frame
+{
+    \frametitle{Syntax Errors}
+
+    \begin{itemize}
+        \item I'm sorry Dave, I can't do that.
+    \end{itemize}
+}
+\subsection{Runtime Errors}
+\frame
+{
+    \frametitle{Runtime Errors}
+
+    \begin{itemize}
+        \item The dreaded Segmentation Fault
+        \item Corrupted data
+    \end{itemize}
+}
+\subsection{Semantic Errors}
+\frame
+{
+    \frametitle{Semantic Errors}
+
+    \begin{itemize}
+        \item Legal, but not OK
+        \item "=" vs. "=="
+    \end{itemize}
+}
+
+\subsection{Interlude}
+\frame
+{
+    \frametitle{Interlude}
+
+    \begin{itemize}
+        \item Let's find a syntax error...
+        \item 1, 2 and 3 line errors
+        \item Look for the earliest source of failure
+        \item Download: http://cecs.pdx.edu/~arik182/debug.tar
+    \end{itemize}
+}
+
+% Slide
+\section{Three general approaches to Runtime Errors}
+\frame
+{
+    \frametitle{Three general approaches}
+
+    \begin{itemize}
+        \item Tracing
+        \item Preemptive Testing
+        \item Interactive Debugging
+    \end{itemize}
+}
+
+% Slide
+\subsection{Tracing}
+\frame
+{
+    \frametitle{Tracing}
+
+    \begin{itemize}
+        \item Tracing by hand is a required skill
+        \item Tracing in a debugger is easier
+    \end{itemize}
+}
+
+% Slide
+\subsection{Preemptive Testing}
+\frame
+{
+    \frametitle{Preemptive Testing}
+
+    \begin{itemize}
+        \item Unit Testing
+        \item The role of Assert
+    \end{itemize}
+}
+
+% Slide
+\subsection{Interactive Debugging}
+\frame
+{
+    \frametitle{Interactive Debugging}
+
+    \begin{itemize}
+        \item The Segmentation Fault is your friend
+        \item Backtrace
+        \item Break
+        \item Print
+    \end{itemize}
+}
+
+% Slide 
+\section{Tips and Tricks}
+\subsection{Warnings}
+\frame
+{
+    \frametitle{Warnings}
+
+    \begin{itemize}
+        \item Compile using -Wall
+        \item All warnings must DIE.
+    \end{itemize}
+}
+
+% Slide 
+\subsection{Getting to know your debugger}
+\frame
+{
+    \frametitle{Getting to know your debugger}
+
+    \begin{itemize}
+        \item You can't really break anything
+        \item GDB's help command
+    \end{itemize}
+}
+
+% Slide 
+\subsection{Never leave your editor}
+\frame
+{
+    \frametitle{Never leave your editor}
+
+    \begin{itemize}
+        \item :make
+        \item :cwin
+        \item :ccl
+    \end{itemize}
+}
+
+% Slide 
+\subsection{Check what you type}
+\frame
+{
+    \frametitle{Check what you type}
+
+    \begin{itemize}
+        \item There's no substitute for care
+        \item Double and triple check yourself
+    \end{itemize}
+}
+
+% Slide 
+\section{Outro}
+\subsection{Checklist (1)}
+\frame
+{
+    \frametitle{List of common suspects (1)}
+
+    \begin{enumerate}
+        \item[1] Array bounds
+        \item[2] Input data
+        \item[3] Prototype Arguments
+        \item[4] Code in a loop that doesn't belong
+        \item[5] Dangling else
+        \item[6] Division by zero
+        \item[7] If conditions (check the test)
+        \item[8] Stopping conditions (infinite loop)
+        \item[9] lvalues
+        \item[10] lvalues
+    \end{enumerate}
+}
+\subsection{Checklist (2)}
+\frame
+{
+    \frametitle{List of common suspects (2)}
+
+    \begin{enumerate}
+        \item[11] Uninitialized variables
+        \item[12] Semicolons
+        \item[13] Operator precedence
+        \item[14] Off-by-one errors in loops
+        \item[15] Missing switch breaks
+        \item[16] Matching parentheses
+        \item[17] Missing return statements
+        \item[18] "=" vs. "=="
+        \item[19] null or garbage pointers/objects
+    \end{enumerate}
+}
+
+\subsection{Additional Resources}
+\frame
+{
+    \frametitle{Additional Resources}
+
+    \begin{itemize}
+        \item gdb help 
+        \item vim :help 
+        \item Practical Debugging in Java, by Ann Ford Et al.
+             \linebreak\hspace{.2in}  ISBN: 0131427814
+        \item The Bug, by Ellen Ullman
+            \linebreak\hspace{.2in}  ISBN: 1400032350
+
+    \end{itemize}
+}
+\end{document}
+
+\subsection{Outro}
+\frame
+{
+    \frametitle{Outro}
+
+    \begin{itemize}
+        \item Software Faults
+        \item Syntax, Runtime, Semantic Errors
+        \item Tracing, Assertion, Interactive debugging
+        \item Get rid of warnings
+        \item Know your environment
+    \end{itemize}
+}
+\end{document}
+
