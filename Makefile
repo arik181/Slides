@@ -1,5 +1,5 @@
 FILE = questions
-
+PRINTER=fabc8802bw1
 all : 
 	pdflatex $(FILE).tex
 
@@ -12,4 +12,4 @@ clean :
 print :
 	latex $(FILE).tex
 	dvips $(FILE).dvi
-	lpr -Pfabc8802bw1 questions.ps
+	lpr -P$(PRINTER) questions.ps
